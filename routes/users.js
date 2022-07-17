@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const usuario = require("../db/schemas/usuario")
+const path = require("path");
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: path.join("public/img"),
@@ -22,7 +23,7 @@ router.get('/list',(req, res, next) => {
      usuario.find({})
     .then((data)=>{
         data = data.map(usuario=>{
-            let {name, mail, _id} = usuario
+            let {name, mail, _id , foto, rol, estado} = usuario
             return {
                 _id,
                 name,
