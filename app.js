@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/productos');
 const authRouter = require('./routes/auth')
 const usuariosRouter = require('./routes/users')
+const peluqueriaRouter = require('./routes/peluqueria')
 const app = express();
 require('dotenv').config()
 
@@ -26,6 +27,7 @@ app.use(rutasProtegidas);
 app.use('/', indexRouter);
 app.use('/api/products', usersRouter);
 app.use('/api/users', usuariosRouter);
+app.use('/api/peluqueria', peluqueriaRouter);
 
 
 
