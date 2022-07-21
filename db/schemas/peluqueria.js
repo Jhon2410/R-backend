@@ -7,9 +7,10 @@ const peluqueria = database.Schema({
     subPhotos:  Array,
     mainPhoto: String, 
     peluquero : Array,
+    idPeluquero : String
 
 })
 
-const Peluqueria = database.model("cortes", peluqueria)
+const Peluqueria = database.model("cortesFinal", peluqueria)
 
 module.exports = Peluqueria;

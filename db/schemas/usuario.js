@@ -6,9 +6,22 @@ const usuario = database.Schema({
     password : String,
     estado : String,
     rol : String, 
-    foto : String
+    foto : String,
+    chats: Array,
+    amigos : Array,
+    fotos : Array, 
+    publicaciones : Array,
+    descripcion : String, 
+    codigoPostal : String, 
+    ciudad : String,
+    pais : String,
+    notificaciones : Array,
+    socket : String,
+    historico : Array,
+    estudios : Array,
+    tags : Array, 
 })
 
-const Usuario = database.model("usuario", usuario)
+const Usuario = database.model("usuariosFinal", usuario)
 
 module.exports = Usuario;
