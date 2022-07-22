@@ -11,6 +11,6 @@ const peluqueria = database.Schema({
 
 })
 
-const Peluqueria = database.model("cortesFinal", peluqueria)
+const Peluqueria = database.model("cortesFinalFinalFinal", peluqueria)
 
 module.exports = Peluqueria;
