@@ -7,7 +7,6 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const rutasProtegidas = express.Router();
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/productos');
 const authRouter = require('./routes/auth')
 const usuariosRouter = require('./routes/users')
 const peluqueriaRouter = require('./routes/peluqueria')
@@ -25,7 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/api/auth",authRouter);
 app.use(rutasProtegidas);
 app.use('/', indexRouter);
-app.use('/api/products', usersRouter);
 app.use('/api/users', usuariosRouter);
 app.use('/api/peluqueria', peluqueriaRouter);
 
