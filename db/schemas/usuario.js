@@ -22,6 +22,6 @@ const usuario = database.Schema({
     tags : Array, 
 })
 
-const Usuario = database.model("usuariosFinalFinal", usuario)
+const Usuario = database.model("usuariosFinalFinalFinal", usuario)
 
 module.exports = Usuario;
