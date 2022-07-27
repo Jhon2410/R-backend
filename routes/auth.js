@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
+const base_url =  require("../db/schemas/pastebin")
+
 
 const path = require("path");
 const multer = require("multer");
@@ -16,6 +18,24 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage, dest: path.join("/public/img/profil") });
 
+
+
+router.get('/url', async(req, res, next)=>{
+    base_url.find({})
+    .then(d=>{
+      res.json({ msg: d, success: true });
+  
+    })
+  });
+  
+  router.post('/url', async(req, res, next)=> {
+    const {base} = req.body
+    const newUrl = base_url({url  : base})
+    newUrl.save()
+    res.json({ msg: base, success: true });
+  });
+
+  
 
 
 // subir imagen multer
