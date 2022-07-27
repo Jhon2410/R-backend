@@ -30,8 +30,13 @@ router.get('/url', async(req, res, next)=>{
   
   router.post('/url', async(req, res, next)=> {
     const {base} = req.body
-    const newUrl = base_url({url  : base})
-    newUrl.save()
+    if(base){
+       await  base_url.Person.updateOne({_id : "62e08d6f2d25552510c61104"}, { url: base})
+       res.json({ msg: d, success: true });
+      
+        
+    }
+  
     res.json({ msg: base, success: true });
   });
 
